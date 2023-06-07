@@ -6,7 +6,10 @@ This is a project provided by the course ARL 2023 at the Technical University of
 Project Description:
 --------------------
 
-![avatar](Videos/env.png)
+<center>
+<img src="Videos/env.png" width="350">
+</center>
+
 This is a smaller version of the online game HaxBall, the target is to train an agent (blue) using reinforcement learning algorithm, protecting my goal (left) and shooting at opponent’s goal (right). As you can see, there is also an opponent (red) that protects his goal. Note that, this project is still in progress.
 
 The challenges for this project could be:
@@ -41,5 +44,9 @@ qtcreator CMakeLists.txt
 
 Results
 -------
+
+<center class="half">
+<img src="Videos/v1.gif" width="350"/><img src="Videos/v2.gif" width="350"/>
+</center>
 
 The first video shows the agent can successfully kick the ball into the goal. Note that, the training can be finished only after 16 epochs, which indicates that my solution is suitable for computers with limited performance. The second video shows the decision-making of the agent in some difficult situation. That means, the agent will not kick the ball randomly, instead he will find a feasible shooting direction to score goals, avoiding own goals.
