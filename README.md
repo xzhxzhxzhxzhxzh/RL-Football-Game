@@ -6,6 +6,7 @@ This is a project provided by the course ARL 2023 at the Technical University of
 Project Description:
 --------------------
 
+![avatar](Videos/env.png)
 This is a smaller version of the online game HaxBall, the target is to train an agent (blue) using reinforcement learning algorithm, protecting my goal (left) and shooting at opponent’s goal (right). As you can see, there is also an opponent (red) that protects his goal. Note that, this project is still in progress.
 
 The challenges for this project could be:
