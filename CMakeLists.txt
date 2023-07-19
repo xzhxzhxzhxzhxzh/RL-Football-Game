@@ -28,7 +28,7 @@ set(SRC_FILES
     ../common/src/RewardFunctions.cpp
     ../haxballenv/src/BaseAgent.cpp
     ../haxballenv/src/DummyAgent.cpp
-    ../haxballenv/src/EvaluationCenter.cpp
+    EvaluationCenter.cpp
     ../haxballenv/src/HaxBall.cpp
     ../haxballenv/src/HaxBallGui.cpp
     Peashooter.cpp

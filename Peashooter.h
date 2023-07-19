@@ -26,7 +26,6 @@ public:
   void getFeatAgentDis(const Eigen::Ref<const Eigen::Vector2d> & m_vector,
                        int & idx) const;
   void getFeatDirDiff(const Eigen::Ref<const Eigen::VectorXd> & state,
-                      const int & idx_agent_dis,
                       int & idx_dir_diff,
                       int & idx_dir_dist,
                       int & idx_dir_case) const;
@@ -43,33 +42,41 @@ public:
                         int & idx) const;
 
   /// Generate action
-  void getAction(Eigen::Ref<Eigen::Vector3d> m_action) const;
+  void getAction(Eigen::Ref<Eigen::Vector3d> m_action,
+                 const int act_idx) const;
 
   /// A linear policy
   void policy(const Eigen::Ref<const Eigen::VectorXd>& state,
               Eigen::Ref<Eigen::VectorXd> action) const override;
-
-  /// A linear policy, which gets the parameters from the outside
   void policy(const Eigen::Ref<const Eigen::VectorXd>& state,
-              const Eigen::Ref<const Eigen::MatrixXd>& m_h,
-              Eigen::Ref<Eigen::VectorXd> action) const;
+              Eigen::Ref<Eigen::VectorXd> action,
+              int & act_idx) const;
+  /// A linear policy, which gets the parameters from the outside
+  const int policy(const Eigen::Ref<const Eigen::VectorXd>& state,
+                   const Eigen::Ref<const Eigen::MatrixXd>& m_h,
+                   Eigen::Ref<Eigen::VectorXd> action) const;
 
-  void randomPolicy(Eigen::Ref<Eigen::Vector3d> m_action) const;
+  const int randomPolicy(Eigen::Ref<Eigen::Vector3d> m_action) const;
 
   /// Currently hardcoded to go to zero
   double reward(const Eigen::Ref<const Eigen::VectorXd>& s,
                 const Eigen::Ref<const Eigen::VectorXd>& action,
                 const Eigen::Ref<const Eigen::VectorXd>& s_prime) const override;
-  double reward_player(const Eigen::Ref<const Eigen::VectorXd> & state,
+  double reward_corner(const Eigen::Ref<const Eigen::VectorXd> & state,
                        const Eigen::Ref<const Eigen::VectorXd> & action,
                        const Eigen::Ref<const Eigen::VectorXd> & state_prime) const;
   double reward_shooting(const Eigen::Ref<const Eigen::VectorXd> & state,
                          const Eigen::Ref<const Eigen::VectorXd> & action,
                          const Eigen::Ref<const Eigen::VectorXd> & state_prime) const;
+  double ball_in_goal(const Eigen::Ref<const Eigen::VectorXd> & state,
+                      const Eigen::Ref<const Eigen::VectorXd> & action,
+                      const Eigen::Ref<const Eigen::VectorXd> & state_prime) const;
 
   /// Currently the constant Q-value "42"
   double getQfactor(const Eigen::Ref<const Eigen::VectorXd>& state,
                     const Eigen::Ref<const Eigen::VectorXd>& action) const override;
+  double getQfactor(const Eigen::Ref<const Eigen::VectorXd>& state,
+                    const int& act_idx) const;
 
   /// Currently the constant Q-values "42 ... 42"
   Eigen::VectorXd getQfactor(const Eigen::Ref<const Eigen::VectorXd>& state) const override;
@@ -111,6 +118,7 @@ public:
   static const double GAMMA;
   static const double ALPHA;
   static const double EPSILON;
+  static const double BETA;
   static const unsigned int N_ACTIONS;
 
   static const unsigned int N_PHI_1;
