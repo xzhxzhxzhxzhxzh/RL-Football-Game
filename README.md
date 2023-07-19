@@ -1,7 +1,7 @@
-Applying Reinforcement Learning on Football Game
+Applied Reinforcement Learning in the HaxBall Game
 ================================================
 
-This is a project provided by the course ARL 2023 at the Technical University of Munich. Due to the copyright restrictions, I am not allowed to upload the code for the football game environment that created by the lecturer, so you can only browse the code contributed by me, which is however not possible to run without access to this environment. I will also show the current results of the project.
+This is a project provided by the course ARL 2023 at the Technical University of Munich. Due to the copyright restrictions, I am not allowed to upload the code for the football game environment that created by the lecturer, so you can only browse the code contributed by me, unfortunately, it is not possible to run without access to this environment.
 
 Project Description:
 --------------------
@@ -44,9 +44,4 @@ qtcreator CMakeLists.txt
 
 Results
 -------
-
-<center class="half">
-<img src="Videos/v1.gif" width="350"/><img src="Videos/v2.gif" width="350"/>
-</center>
-
-The first video shows the agent can successfully kick the ball into the goal. Note that, the training can be finished only after 16 epochs, which indicates that my solution is suitable for computers with limited performance. The second video shows the decision-making of the agent in some difficult situation. That means, the agent will not kick the ball randomly, instead he will find a feasible shooting direction to score goals, avoiding own goals.
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/ezfPW6VnaHA/0.jpg)](https://youtu.be/ezfPW6VnaHA)
